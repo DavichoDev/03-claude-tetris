@@ -70,6 +70,8 @@ jobs:
                Busca antes un comentario existente con ese marcador usando `gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments`.
                Si existe, actualízalo con `gh api -X PATCH repos/${{ github.repository }}/issues/comments/<id> -f body=...`; si no, créalo con `gh issue comment`.
 
+            El comentario debe estar escrito en formato Markdown que GitHub pueda interpretar (GitHub Flavored Markdown): encabezados con `#`, listas con `-`, negritas con `**`, código en línea con comillas invertidas y bloques de código con ``` y lenguaje. No uses HTML salvo el marcador inicial.
+
             Formato del comentario:
             ## Diagnóstico automático
             - **Resumen**: qué se reporta o solicita.
