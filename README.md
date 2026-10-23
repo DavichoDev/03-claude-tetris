@@ -1,6 +1,6 @@
 # Tetris
 
-Implementación del clásico **Tetris** en JavaScript vanilla, usando HTML5 Canvas y CSS. Sin dependencias externas, sin frameworks, sin proceso de build: solo abrir y jugar.
+Implementación del clásico **Tetris** en JavaScript vanilla, usando HTML5 Canvas y CSS. Sin dependencias externas, sin frameworks, sin proceso de build: solo abrir y jugar. | GitHub Page: https://davichodev.github.io/03-claude-tetris/
 
 ![Tech](https://img.shields.io/badge/HTML5-Canvas-orange)
 ![Tech](https://img.shields.io/badge/CSS3-blueviolet)
