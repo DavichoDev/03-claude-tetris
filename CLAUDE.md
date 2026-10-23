@@ -23,6 +23,6 @@ Everything lives in `game.js` (no modules, `'use strict'`, global mutable state 
 
 Los colores de `style.css` son variables CSS (`:root` oscuro, `:root[data-theme="light"]` claro). El botón `#theme-toggle` alterna `document.documentElement.dataset.theme` y actualiza `gridColor` (leído de `--grid`) para `drawGrid`. No se persiste ni tiene atajo de teclado. Los colores de las piezas (`COLORS`) no cambian con el tema.
 
-### Known quirk
+### Game over and the loop
 
-`endGame()` is reached from inside `loop` (via `lockPiece` → `spawn`), but `loop` then unconditionally schedules the next frame, overriding the `cancelAnimationFrame` in `endGame()`. After game over the loop keeps running and gravity keeps locking pieces under the overlay. When touching the loop or `endGame`, guard the `requestAnimationFrame` call with `gameOver`.
+`endGame()` is reached from inside `loop` (via `lockPiece` → `spawn`), where `cancelAnimationFrame` has nothing to cancel. `loop` therefore returns early when `gameOver` is set and only schedules the next frame if `!gameOver`. Keep both guards when touching the loop or `endGame`.
